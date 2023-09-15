@@ -4,13 +4,14 @@ import Animated from 'react-native-reanimated';
 
 import LinearGradient from 'react-native-linear-gradient';
 import { create } from 'react-test-renderer';
-import SkeletonContent from '../SkeletonContent';
+
 import {
   ISkeletonContentProps,
   DEFAULT_BONE_COLOR,
   DEFAULT_HIGHLIGHT_COLOR,
   DEFAULT_BORDER_RADIUS
-} from '../Constants';
+} from '../constants';
+import { SkeletonContent } from '../skeleton-content';
 
 const staticStyles = {
   borderRadius: DEFAULT_BORDER_RADIUS,
