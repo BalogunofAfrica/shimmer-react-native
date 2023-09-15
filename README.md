@@ -1,6 +1,6 @@
 ## React Native Skeleton Content Nonexpo
 
-> This the not-expo dependant version of [this package](https://github.com/alexZajac/react-native-skeleton-content).
+> This a fork of [this package](https://github.com/alexZajac/react-native-skeleton-content-nonexpo), it resolves the issue with using it with reanimated and removes the hard requirement on redash
 
 <img width="220px" align="right" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/main.gif" />
 
@@ -9,7 +9,6 @@ React native Skeleton Content, a simple yet fully customizable component made to
 ### New Features
 
 - The package has been rewritten to Hooks and is using the declarative [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) package for animations
-- It now supports nested layouts for children bones, see an example on [this snack](https://snack.expo.io/@alexandrezajac/skeleton-content-demo)
 - It finally supports percentages dimensions for bones, for any type of animation!
 
 [![Build Status](https://travis-ci.org/alexZajac/react-native-skeleton-content-nonexpo.svg?branch=master)](https://travis-ci.org/alexZajac/react-native-skeleton-content-nonexpo) [![Coverage Status](https://coveralls.io/repos/github/alexZajac/react-native-skeleton-content-nonexpo/badge.svg?branch=master)](https://coveralls.io/github/alexZajac/react-native-skeleton-content-nonexpo?branch=master) [![npm version](https://img.shields.io/npm/v/react-native-skeleton-content-nonexpo.svg?style=flat-square)](https://www.npmjs.com/package/react-native-skeleton-content)
@@ -24,16 +23,28 @@ React native Skeleton Content, a simple yet fully customizable component made to
 ### Installation
 
 ```shell script
-npm install react-native-skeleton-content-nonexpo
+npm install @balogunofafrica/react-native-skeleton-content-nonexpo
+```
+
+or
+
+```shell script
+yarn add @balogunofafrica/react-native-skeleton-content-nonexpo
 ```
 
 > This package requires the `react-native-linear-gradient` package, make sure it's installed and working on your project.
- 
-Also install the following peer dependencies as the package depends on them. We prefer you install these dependencies 
+
+Also install the following peer dependencies as the package depends on them. We prefer you install these dependencies
 inorder to prevent double instance errors.
 
 ```shell script
 npm install react-native-reanimated
+```
+
+or
+
+```shell script
+yarn add react-native-reanimated
 ```
 
 ### Usage
@@ -41,7 +52,7 @@ npm install react-native-reanimated
 1.  Import react-native-skeleton-content:
 
 ```javascript
-import SkeletonContent from 'react-native-skeleton-content-nonexpo';
+import SkeletonContent from '@balogunofafrica/react-native-skeleton-content-nonexpo';
 ```
 
 2.  Once you create the SkeletonContent, you have two options:
@@ -70,15 +81,15 @@ export default function Placeholder() {
 3.  Then simply sync the prop `isLoading` to your state to show/hide the SkeletonContent when the assets/data are available to the user.
 
 ```javascript
-export default function Placeholder () {
+export default function Placeholder() {
   const [loading, setLoading] = useState(true);
   return (
     <SkeletonContent
-       	containerStyle={{flex: 1, width: 300}}
-        isLoading={isLoading}
-        {...otherProps}
+      containerStyle={{ flex: 1, width: 300 }}
+      isLoading={isLoading}
+      {...otherProps}
     />
-  )
+  );
 }
 ```
 
@@ -108,15 +119,15 @@ See the playground section to experiment :
 </p>
 
 ```javascript
-export default function Placeholder () {
+export default function Placeholder() {
   return (
     <SkeletonContent
-        containerStyle={{flex: 1, width: 300}}
-        animationDirection="horizontalLeft"
-        isLoading={true}
-        // ...
+      containerStyle={{ flex: 1, width: 300 }}
+      animationDirection="horizontalLeft"
+      isLoading={true}
+      // ...
     />
-  )
+  );
 }
 ```
 
@@ -127,17 +138,17 @@ export default function Placeholder () {
 </p>
 
 ```javascript
-export default function Placeholder () {
+export default function Placeholder() {
   return (
     <SkeletonContent
-        containerStyle={{flex: 1, width: 300}}
-        boneColor="#121212"
-        highlightColor="#333333"
-        animationType="pulse"
-        isLoading={true}
-        // ...
+      containerStyle={{ flex: 1, width: 300 }}
+      boneColor="#121212"
+      highlightColor="#333333"
+      animationType="pulse"
+      isLoading={true}
+      // ...
     />
-  )
+  );
 }
 ```
 
@@ -148,26 +159,21 @@ export default function Placeholder () {
 </p>
 
 ```javascript
-export default function Placeholder () {
+export default function Placeholder() {
   return (
     <SkeletonContent
-        containerStyle={{flex: 1, width: 300}}
-        animationDirection="horizontalLeft"
-        layout={[
-			// long line
-			{ width: 220, height: 20, marginBottom: 6 },
-			// short line
-			{ width: 180, height: 20, marginBottom: 6 },
-			// ...
-        ]}
-        isLoading={true}
-       	// ...
+      containerStyle={{ flex: 1, width: 300 }}
+      animationDirection="horizontalLeft"
+      layout={[
+        // long line
+        { width: 220, height: 20, marginBottom: 6 },
+        // short line
+        { width: 180, height: 20, marginBottom: 6 }
+        // ...
+      ]}
+      isLoading={true}
+      // ...
     />
-  )
+  );
 }
 ```
-
-### Playground
-
-You can test out the features and different props easily on [**Snack**](https://snack.expo.io/@alexandrezajac/skeleton-content-demo).
-Don't hesitate to take contact if anything is unclear !

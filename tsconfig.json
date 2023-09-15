@@ -10,9 +10,9 @@
     "baseUrl": "./",
     "outDir": "./lib",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
-  "include": ["./src", "node_modules/react-native-redash/lib/typescript/v1/index.d.ts"],
+  "include": ["./src"],
   "exclude": [
     "**/node_modules/**",
     "**/lib/**",
