@@ -52,7 +52,7 @@ yarn add react-native-reanimated
 1.  Import react-native-skeleton-content:
 
 ```javascript
-import SkeletonContent from '@balogunofafrica/react-native-skeleton-content-nonexpo';
+import { SkeletonContent } from '@balogunofafrica/react-native-skeleton-content-nonexpo';
 ```
 
 2.  Once you create the SkeletonContent, you have two options:
